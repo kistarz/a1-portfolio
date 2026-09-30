@@ -1,1 +1,15 @@
 /*--style sheet for portfolio*/
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem var(--side-pad);
+    font-size: clamp(1.1rem, 2.2vw, 2rem);
+}
+
+.nav-links{
+    display: flex;
+    gap: 1.2rem;
+    list-style: none;
+}
