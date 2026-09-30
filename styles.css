@@ -1,11 +1,17 @@
 /*--style sheet for portfolio*/
 
+.body{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem var(--side-pad);
-    font-size: clamp(1.1rem, 2.2vw, 2rem);
+    font-size: clamp(1rem, 1.7vw, 1.5rem);
 }
 
 .nav-links{
