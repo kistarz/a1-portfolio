@@ -8,18 +8,19 @@ EMAIL: vanesp6@uci.edu
 
 <head>
   <meta charset="utf-8">
-  <meta name="author" content="Your name here">
-  <meta name="description" content="description of your page">
+  <meta name="author" content="Vanessa Pham">
+  <meta name="description" content="My Portfolio">
    <!-- you would link to an external stylesheet here! -->
+  <link rel="stylesheet" href="styles.css">
    <!-- you would also link to Bootstrap here! -->
   <title>Vanessa Pham</title>
-</head>
+</head>                                         
 <body>
   <header>
     <nav class="nav" aria-label="Main">
       <a href="#" class="nav-name">Vanessa Pham</a>
       <ul class = "nav-links">
-        <li><a href="#Home">Home</a></li>
+        <li><a href="#">Home</a></li>
         <li><a href="#about">About Me</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -27,9 +28,10 @@ EMAIL: vanesp6@uci.edu
   </header>
   <main>
     <section class = "hero" aria-labelledby="hero-title">
-      <p class = "hero-line top">Hello,</p>
+      <h1 id = "hero-title" class = "screenreader-only">Hello, I'm Vanessa</h1>
+      <p class = "hero-line top" aria-hidden="true">Hello,</p>
       <div class = "hero-image">image here</div>
-      <p class = "hero-line bottom">I'm Vanessa</p>
+      <p class = "hero-line bottom" aria-hidden="true">I'm Vanessa</p>
     </section>
   </main>
   <p>
