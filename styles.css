@@ -5,6 +5,7 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #F8F8F8;
 }
 
 .nav{
@@ -14,13 +15,23 @@
     align-items: center;
     padding-left: 2.5vw;
     padding-right: 2.5vw;
-    font-size: clamp(1rem, 1.7vw, 1.5rem);
+    font-size: clamp(.9rem, 1.2vw, 1rem);
 }
 
 .nav-links{
     display: flex;
     gap: 1.2rem;
     list-style: none;
+}
+
+a:link{
+    color: #252525;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+    text-decoration: none;
 }
 
 .hero{
@@ -34,6 +45,7 @@
     line-height: 1;
     margin: 0.5rem 0;
     padding-left: 5vw;
+    color: #252525;
 }
 
 .hero-image{
@@ -48,6 +60,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    color: #252525;
 }
 
 .hero-line--bottom{
