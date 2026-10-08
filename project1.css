@@ -3,3 +3,63 @@
     flex-direction: column;
     gap: clamp(1rem, 3vw, 2.5rem) var(--side-pad 6rem);
 }
+
+.project-banner{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 10vw, 9rem) clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 8vw, 7.3rem);
+    background: gray; 
+}
+
+.project-title{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2.25rem, 4.5vw, 4rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.project-intro p{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1rem, 1.6vw, 1.4rem);
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 40ch;
+}
+
+.carousel{
+    position: relative;
+    width: clamp(12rem, 22vw, 19.5rem);
+    aspect-ratio: 313/221;
+    background: #a6a6a6;
+    overflow: hidden;
+}
+
+.slide{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.slide.is-active{
+    opacity: 1;
+}
+
+.carousel-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: clamp(1rem, 1.6vw, 1.4rem)
+}
+
+.carousel-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
