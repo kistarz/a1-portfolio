@@ -1,3 +1,29 @@
+.nav{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    font-size: clamp(.9rem, 1.2vw, 1rem);
+}
+
+.nav-links{
+    display: flex;
+    gap: 1.2rem;
+    list-style: none;
+}
+
+a:link{
+    color: #252525;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+    text-decoration: none;
+}
+
 .about {
     padding: clamp(1rem, 3vw, 2.5rem) var(--side-pad) 6rem;
 }
