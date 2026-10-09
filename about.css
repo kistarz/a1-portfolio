@@ -55,7 +55,7 @@ a:hover{
     gap: 2rem;
     min-height: var(--banner-h);
     padding: clamp(1.5rem, 4vw, 2.75rem) clamp(1.5rem, 4vw, 3rem) 0 clamp(1.5rem, 8vw, 7.3rem);
-    background: #edd0ca;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.725), rgba(255, 255, 255, 0.725)), url('AboutBackgroundImg.png');
 }
 
 .about-text{
@@ -125,7 +125,6 @@ a:hover{
 .carousel{
     position: relative;
     aspect-ratio: 11/8;
-    background: gray;
     overflow: hidden;
 }
 
@@ -183,7 +182,7 @@ a:hover{
     left: .25rem;
 }
 
-.carousel-button-next{
+.carousel-button--next{
     right: .25rem;
 }
 
