@@ -43,12 +43,24 @@ a:hover{
 }
 
 .about-banner{
-    margin-top: 2rem;
+    margin-top: 4rem;
+    --banner-h: clamp(12rem, 22vw, 19.5rem);
+    --pop: clamp(1rem, 3vw, 2.5rem);
+    --pad-l: clamp(1.5rem, 8vw, 7.3rem);
+    --pad-r: clamp(1.5rem, 4vw, 3rem);
+    --gap: 2rem;
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    min-height: var(--banner-h);
     padding: clamp(1.5rem, 4vw, 2.75rem) clamp(1.5rem, 4vw, 3rem) 0 clamp(1.5rem, 8vw, 7.3rem);
     background: #edd0ca;
+}
+
+.about-text{
+    align-self: center;
+    padding-bottom: clamp(1.5rem, 4vw, 2.75rem);
 }
 
 .about-title{
@@ -68,13 +80,17 @@ a:hover{
 }
 
 .about-image{
-    align-self: end;
-    justify-self: center;
+    position: absolute;
+    bottom: 0;
+    margin-right: 10rem;
+    left: 75%;
+    transform: translateX(-50%);
+    width: clamp(20rem, 36vw, 32rem);
+    height: calc(var(--banner-h)+var(--pop));
+    aspect-ratio: 313/271;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: clamp(12rem, 22vw, 19.5rem);
-    aspect-ratio: 623 / 542;
     font-size: clamp(1rem, 1.6vw, 1.4rem);
     overflow: hidden;
 }
