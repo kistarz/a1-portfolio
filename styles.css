@@ -1,11 +1,11 @@
 /*--style sheet for portfolio*/
-
+/*--color palette: white #f1f2f7, pink #e2788c, blue #83adf0, beige #edd0ca*/
 /*hero section*/
 .body{
     font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F8F8F8;
+    background-color: #F1F2F7;
 }
 
 .nav{
@@ -16,21 +16,27 @@
     padding-left: 2.5vw;
     padding-right: 2.5vw;
     font-size: clamp(.9rem, 1.2vw, 1rem);
+    color: #e2788c;
 }
 
 .nav-links{
+    color: #e2788c;
     display: flex;
     gap: 1.2rem;
     list-style: none;
 }
 
 a:link{
-    color: #252525;
+    color: #e2788c;
     text-decoration: none;
 }
 
+a:visited {
+  color: #e2788c; 
+}
+
 a:hover{
-    color: black;
+    color: #83adf0;
     text-decoration: none;
 }
 
@@ -44,8 +50,7 @@ a:hover{
     font-weight: 300;
     line-height: 1;
     margin: 0.5rem 0;
-    padding-left: 5vw;
-    color: #252525;
+    padding-left: 12.5vw;
 }
 
 .hero-image{
@@ -60,7 +65,6 @@ a:hover{
     height: 100%;
     object-fit: cover;
     display: block;
-    color: #252525;
 }
 
 .hero-line--bottom{
@@ -69,7 +73,7 @@ a:hover{
     font-weight: 350;
     line-height: 1;
     margin: 0.5rem 0;
-    padding-right: 5vw;
+    padding-right: 12.5vw;
     text-align: right;
 }
 
@@ -88,10 +92,11 @@ a:hover{
 .projects-title{
     grid-column: 1 / -1;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(1.5erm, 2.5vw, 2.5rem);
+    font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 300;
     line-height: 1;
     margin-bottom: 0.5rem;
+    color: #e2788c;
 }
 
 .project-box{
