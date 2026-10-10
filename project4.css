@@ -1,3 +1,5 @@
+/*--color palette: white #f1f2f7, pink #e2788c, blue #83adf0, beige #edd0ca*/
+
 .nav{
     font-family: 'Plus Jakarta Sans', sans-serif;
     display: flex;
@@ -14,13 +16,43 @@
     list-style: none;
 }
 
+.body{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F1F2F7;
+}
+
+.nav{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    font-size: clamp(.9rem, 1.2vw, 1rem);
+    color: #e2788c;
+    margin-bottom: clamp(2rem, 3.5vw, 2.5rem);
+}
+
+.nav-links{
+    color: #e2788c;
+    display: flex;
+    gap: 1.2rem;
+    list-style: none;
+}
+
 a:link{
-    color: #252525;
+    color: #e2788c;
     text-decoration: none;
 }
 
+a:visited {
+  color: #e2788c; 
+}
+
 a:hover{
-    color: black;
+    color: #83adf0;
     text-decoration: none;
 }
 
@@ -29,6 +61,8 @@ a:hover{
     flex-direction: column;
     gap: clamp(1rem, 3vw, 2.6rem);
     padding: clamp(1rem, 3vw, 2.5rem) var(--side-pad 6rem);
+    max-width: 80rem;
+    margin: 0 auto;
 }
 
 .project-banner{
@@ -37,7 +71,7 @@ a:hover{
     align-items: center;
     gap: 2rem;
     padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 10vw, 9rem) clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 8vw, 7.3rem);
-    background: gray; 
+    background: #edd0ca;
 }
 
 .project-title{
@@ -92,9 +126,23 @@ a:hover{
 }
 
 .project-section{
-    padding: clamp(1.5rem, 3.5vw, 3.25rem) clamp(1.5rem, 4.5vw, 4rem) clamp(1.5rem, 4vw, 3.5rem);
-    background: gray;
+    position: relative;
+    isolation: isolate;
+    padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 10vw, 9rem) clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 8vw, 7.3rem);
+    background: #edd0ca;
 }
+
+.project-section::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: #f1f2f7;
+    opacity: var(--overlay, 0);
+}
+
+.project-section:nth-child(2){ --overlay: .3; }
+.project-section:nth-child(3){ --overlay: .6; }
 
 .section-title{
     font-size: clamp(1.25rem, 2vw, 1.75rem);
@@ -121,13 +169,33 @@ a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 313/221;
-    background: #a6a6a6;
+    aspect-ratio: 2/2;
     font-size: clamp(1rem, 1.6vw, 1.4rem);
     overflow: hidden;
 }
 
 .gallery-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1rem, 4vw, 3.6rem);
+}
+
+.gallery2-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1rem, 1.6vw, 1.4rem);
+    overflow: hidden;
+}
+
+.gallery2-image img{
     width: 100%;
     height: 100%;
     object-fit: cover;
