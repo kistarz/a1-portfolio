@@ -54,7 +54,6 @@ a:hover {
     justify-content: center;
     width: 100%;
     aspect-ratio: 769 / 301;
-    background: #686868;
     color: #fff;
     font-size: clamp(1.25rem, 2.8vw, 2.5rem);
     font-weight: 300;
