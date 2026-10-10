@@ -126,9 +126,10 @@ a:hover{
 .project-overlay p {
     color: black;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(.85rem, 1.1vw, 1rem);
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
     font-weight: 300;
     line-height: 1.5;
+    background: #f1f2f7;
 }
 
 .project-box:hover .project-overlay, .project-box:focus-visible .project-overlay {
