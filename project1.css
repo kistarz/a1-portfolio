@@ -60,7 +60,7 @@ a:hover{
     display: flex;
     flex-direction: column;
     gap: clamp(1rem, 3vw, 2.6rem);
-    padding: clamp(1rem, 3vw, 2.5rem) var(--side-pad 6rem);
+    padding: 0 0 6rem;
     max-width: 80rem;
     margin: 0 auto;
 }

@@ -1,3 +1,5 @@
+/*--color palette: white #f1f2f7, pink #e2788c, blue #83adf0, beige #edd0ca*/
+
 .nav{
     font-family: 'Plus Jakarta Sans', sans-serif;
     display: flex;
@@ -14,13 +16,43 @@
     list-style: none;
 }
 
+.body{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F1F2F7;
+}
+
+.nav{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    font-size: clamp(.9rem, 1.2vw, 1rem);
+    color: #e2788c;
+    margin-bottom: clamp(2rem, 3.5vw, 2.5rem);
+}
+
+.nav-links{
+    color: #e2788c;
+    display: flex;
+    gap: 1.2rem;
+    list-style: none;
+}
+
 a:link{
-    color: #252525;
+    color: #e2788c;
     text-decoration: none;
 }
 
+a:visited {
+  color: #e2788c; 
+}
+
 a:hover{
-    color: black;
+    color: #83adf0;
     text-decoration: none;
 }
 
@@ -28,7 +60,9 @@ a:hover{
     display: flex;
     flex-direction: column;
     gap: clamp(1rem, 3vw, 2.6rem);
-    padding: clamp(1rem, 3vw, 2.5rem) var(--side-pad 6rem);
+    padding: 0 0 6rem;
+    max-width: 80rem;
+    margin: 0 auto;
 }
 
 .project-banner{
@@ -37,12 +71,12 @@ a:hover{
     align-items: center;
     gap: 2rem;
     padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 10vw, 9rem) clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 8vw, 7.3rem);
-    background: gray; 
+    background: #edd0ca;
 }
 
 .project-title{
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(2.25rem, 4.5vw, 4rem);
+    font-size: clamp(1.5rem, 3.5vw, 3rem);
     font-weight: 300;
     line-height: 1.1;
     margin-bottom: 1rem;
@@ -53,83 +87,101 @@ a:hover{
     font-size: clamp(1rem, 1.6vw, 1.4rem);
     font-weight: 300;
     line-height: 1.5;
-    max-width: 40ch;
+    max-width: 150ch;
 }
 
-.carousel{
+.btn,
+.btn:link,
+.btn:visited{
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: .75rem 1.5rem;
+    background: #e2788c;
+    color: black;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(.9rem, 1.2vw, 1rem);
+    text-decoration: none;
+    border-radius: 2rem;
+    transition: background .2s ease;
+}
+
+.btn:hover{
+    background: #83adf0;
+    color: black;
+}
+
+#scroll{
+    color:#e2788c;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.25rem, 1.75vw, 1.75rem);
+    margin: auto;
+    margin-top: 2rem;
+    align-items: center;
+    opacity: 75%;
+}
+.annotated-stage{
     position: relative;
-    width: clamp(12rem, 22vw, 19.5rem);
-    aspect-ratio: 313/221;
-    background: #a6a6a6;
-    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    aspect-ratio: 1186 / 1270;
+}
+ 
+.annotated-img{
+    position: absolute;
+    left: 17.12%;
+    top: 9.2%;
+    width: 65.08%;
+    height: auto;
+    display: block;
 }
 
-.slide{
+.annotated-lines{
     position: absolute;
     inset: 0;
-    opacity: 0;
-    transition: opacity 0.8s ease;
-}
-
-.slide.is-active{
-    opacity: 1;
-}
-
-.carousel-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
     height: 100%;
-    font-size: clamp(1rem, 1.6vw, 1.4rem)
+    pointer-events: none;
+}
+ 
+.annotated-lines line{
+    stroke: #e2788c;
+    stroke-width: 3px;
+    stroke-linecap: round;
 }
 
-.carousel-image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.project-section{
-    padding: clamp(1.5rem, 3.5vw, 3.25rem) clamp(1.5rem, 4.5vw, 4rem) clamp(1.5rem, 4vw, 3.5rem);
-    background: gray;
-}
-
-.section-title{
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
-    font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 0.75rem;
-}
-
-.section-desc{
-    font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+.note{
+    position: absolute;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(.75rem, 1vw, 1rem);
+    font-size: clamp(.75rem, 1.25vw, 1rem);
     font-weight: 300;
-    line-height: 1.5;
-    max-width: 60ch;
-    margin-bottom: clamp(1.5rem, 3.5vw, 3rem);
+    line-height: 1.4;
+    margin: 0;
 }
-
-.gallery{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(1rem, 4vw, 3.6rem);
+ 
+.note--left{
+    left: 0;
+    top: 29%;
+    width: 24%;
 }
-
-.gallery-image{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    aspect-ratio: 313/221;
-    background: #a6a6a6;
-    font-size: clamp(1rem, 1.6vw, 1.4rem);
-    overflow: hidden;
+ 
+.note--left p{
+    margin: 0;
+    max-width: 30ch;
 }
-
-.gallery-image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+ 
+.note--left p + p{
+    margin-top: 1em;
 }
+ 
+.note--right{
+    left: 88.2%;
+    width: 11.8%;
+    transform: translateY(-50%);
+    max-width: 30ch;
+}
+ 
+.note--1{ top: 27.2%; }
+.note--2{ top: 39.5%; }
+.note--3{ top: 56.9%; }
+.note--4{ top: 72.7%; }

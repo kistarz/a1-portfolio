@@ -93,7 +93,7 @@ a:hover{
     left: 75%;
     transform: translateX(-50%);
     width: clamp(20rem, 36vw, 32rem);
-    height: calc(var(--banner-h)+var(--pop));
+    height: calc(var(--banner-h) + var(--pop));
     aspect-ratio: 313/271;
     display: flex;
     align-items: center;
