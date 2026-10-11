@@ -1,9 +1,11 @@
 /*--style sheet for portfolio*/
-
+/*--color palette: white #f1f2f7, pink #e2788c, blue #83adf0, beige #edd0ca*/
+/*hero section*/
 .body{
     font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #F1F2F7;
 }
 
 .nav{
@@ -13,13 +15,29 @@
     align-items: center;
     padding-left: 2.5vw;
     padding-right: 2.5vw;
-    font-size: clamp(1rem, 1.7vw, 1.5rem);
+    font-size: clamp(.9rem, 1.2vw, 1rem);
+    color: #e2788c;
 }
 
 .nav-links{
+    color: #e2788c;
     display: flex;
     gap: 1.2rem;
     list-style: none;
+}
+
+a:link{
+    color: #e2788c;
+    text-decoration: none;
+}
+
+a:visited {
+  color: #e2788c; 
+}
+
+a:hover{
+    color: #83adf0;
+    text-decoration: none;
 }
 
 .hero{
@@ -32,7 +50,7 @@
     font-weight: 300;
     line-height: 1;
     margin: 0.5rem 0;
-    padding-left: 5vw;
+    padding-left: 12.5vw;
 }
 
 .hero-image{
@@ -55,6 +73,83 @@
     font-weight: 350;
     line-height: 1;
     margin: 0.5rem 0;
-    padding-right: 5vw;
+    padding-right: 12.5vw;
     text-align: right;
+}
+
+/*project section*/
+.projects{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 70rem;
+    margin-top: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.5rem 6rem;
+}
+
+.projects-title{
+    grid-column: 1 / -1;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    color: #e2788c;
+}
+
+.project-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 4/3;
+    border: 2px solid #edd0ca;
+    background-color: white; 
+    overflow: hidden;
+    position: relative;
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(241, 242, 247, .5);
+    color: #f1f2f7;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.project-overlay p {
+    color: black;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(.85rem, 1.1vw, 1rem);
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.project-box:hover .project-overlay, .project-box:focus-visible .project-overlay {
+    opacity: 1;
+}
+
+.project-label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2rem 1rem .75rem;
+    color: #f1f2f7;
+    background: linear-gradient(to top, rgba(0, 0, 0, .75), rgba(0, 0, 0, 0));
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+.project-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }

@@ -1,0 +1,98 @@
+<!--about me page :p-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+
+<!-- long list of fonts...-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Jersey+25&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=TASA+Orbiter:wght@400..800&display=swap" rel="stylesheet">
+   
+<!-- you would link to an external stylesheet here! -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+    <header>
+        <nav class="nav" aria-label="Main">
+        <a href="#" class="nav-name">Vanessa Pham</a>
+        <ul class = "nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        </nav>
+  </header>
+
+<main class="about">
+    <section class="about-banner" aria-label="about-title">
+        <div class="about-text">
+            <h1 id="about-title" class="about-title">About Me</h1>
+            <p>Hi! I'm Vanessa, a designer who aims to create incredible experiences. I’ve worked with many organizations to bring their visions to life, while also pursuing my own personal projects. My biggest source of inspiration has been video game UI, especially the experiences created by HoYoverse. The way they blend breathtaking style with clear functionality is what drives my own design philosophy.</p>
+        </div>
+
+        <div class = "about-image"><img src="HeadShot 1.png"></div>
+    </section>
+
+    <div class="about-columns">
+        <section class="column" aria-label="characters-names">
+            <h2 id="characters-names" class="column-title">My Favorite Characters</h2>
+            <div class="carousel" aria-label="Fav characters">
+                <figure class="slide">
+                    <div class="slide-image"><img src ="ChisaWutheringWaves.jpg" alt="Chisa"></div>
+                    <figcaption class="slide-caption">Chisa: Wuthering Waves</figcaption>
+                </figure>
+                <figure class="slide" hidden>
+                    <div class = "slide-image"><img src ="SelenaPunishingGrayRaven.jpg" alt="Selena"></div>
+                    <figcaption class="slide-caption">Selena: Punishing Gray Raven</figcaption>
+                </figure>
+                <figure class="slide" hidden>
+                    <div class = "slide-image"><img src ="CarlottaWutheringWaves.png" alt="Carlotta"></div>
+                    <figcaption class="slide-caption">Carlotta: Wuthering Waves</figcaption>
+                </figure>
+                <figure class="slide" hidden>
+                    <div class = "slide-image"><img src ="Sandrone Genshin Impact.jpeg" alt="Sandrone"></div>
+                    <figcaption class="slide-caption">Sandrone: Genshin Impact</figcaption>
+                </figure>
+
+                <button type="button" class="carousel-button carousel-button--previous" aria-label="previous character">&lt;</button>
+                <button type="button" class="carousel-button carousel-button--next" aria-label="next character">&gt;</button>
+            </div>
+        </section>
+
+        <section class="column" aria-label="skills">
+            <h2 id="skills" class="column-title">My Skills</h2>
+            <ul class="skills-list">
+                <li>User Research & Testing</li>
+                <li>Wireframing & Prototyping</li>
+                <li>UI & Graphic Design</li>
+                <li>Interaction Design</li>
+            </ul>
+        </section>
+
+        <section class="column" aria-label="tools">
+            <h2 id="tools" class="column-title">Tools</h2>
+            <ul class="tools-list">
+                <li>
+                    <img class="tool-logo" src="figmalogo.png" alt="figma logo">
+                    <span>Figma</span>
+                </li>
+                <li>
+                    <img class="tool-logo" src="PSlogo.png" alt="Photoshop logo">
+                    <span>Adobe PS</span>
+                </li>
+                <li>
+                    <img class="tool-logo" src="splinelogo.png" alt="splien logo">
+                    <span>Spline</span>
+                </li>
+            </ul>
+        </section>
+    </div>
+</main>
+
+<script src="about.js"></script>
+</body>
+</html>
