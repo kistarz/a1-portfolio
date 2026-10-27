@@ -1,132 +1,261 @@
-/*--color palette: white #f1f2f7, pink #e2788c, blue #83adf0, beige #edd0ca*/
-
-.nav{
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 2.5vw;
-    padding-right: 2.5vw;
-    font-size: clamp(.9rem, 1.2vw, 1rem);
+/* Shared styles for all project pages. Page-specific tweaks live in project2/3/4.css */
+ 
+:root {
+    --white: #f1f2f7;
+    --pink: #e2788c;
+    --pink-text: #b23c5a; /* darker pink for text links: passes contrast on --white */
+    --blue: #83adf0;
+    --beige: #edd0ca;
+    --ink: #1c1a1b;
+    --rule: rgba(226, 120, 140, .35);
 }
-
-.nav-links{
-    display: flex;
-    gap: 1.2rem;
-    list-style: none;
-}
-
-.body{
+ 
+*, *::before, *::after { box-sizing: border-box; }
+ 
+body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #F1F2F7;
+    color: var(--ink);
+    line-height: 1.5;
+    background: var(--white);
 }
-
-.nav{
-    font-family: 'Plus Jakarta Sans', sans-serif;
+ 
+/* Header + nav (sticky so the page is always navigable) */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(241, 242, 247, .88);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+ 
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 2.5vw;
-    padding-right: 2.5vw;
+    padding: 1rem clamp(1rem, 4vw, 2.5rem);
     font-size: clamp(.9rem, 1.2vw, 1rem);
-    color: #e2788c;
-    margin-bottom: clamp(2rem, 3.5vw, 2.5rem);
 }
-
-.nav-links{
-    color: #e2788c;
+ 
+.nav-name { font-weight: 600; }
+ 
+.nav-links {
     display: flex;
-    gap: 1.2rem;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
-
-a:link{
-    color: #e2788c;
+ 
+a {
+    color: var(--pink-text);
     text-decoration: none;
 }
-
-a:visited {
-  color: #e2788c; 
-}
-
-a:hover{
+ 
+a:hover {
     color: #83adf0;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: .3em;
 }
-
+ 
+a:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+    border-radius: .25rem;
+}
+ 
+/* Page layout */
 .project {
     display: flex;
     flex-direction: column;
-    gap: clamp(1rem, 3vw, 2.6rem);
-    padding: 0 0 6rem;
+    gap: clamp(2rem, 5vw, 4rem);
     max-width: 80rem;
     margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2.5rem) 6rem;
 }
-
-.project-banner{
+ 
+/* Banner: the one loud element. Beige field, big title, framed image with a pink offset block */
+.project-banner {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    gap: 2rem;
-    padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 10vw, 9rem) clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 8vw, 7.3rem);
-    background: #edd0ca;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding: clamp(1.75rem, 5vw, 4rem);
+    background: var(--beige);
+    border-radius: 1.75rem;
 }
-
-.project-title{
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(1.5rem, 3.5vw, 3rem);
-    font-weight: 300;
-    line-height: 1.1;
-    margin-bottom: 1rem;
+ 
+.project-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -.02em;
+    margin: 0 0 1.25rem;
 }
-
-.project-intro p{
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(1rem, 1.6vw, 1.4rem);
-    font-weight: 300;
-    line-height: 1.5;
-    max-width: 150ch;
+ 
+.project-intro p {
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.65;
+    max-width: 62ch;
+    margin: 0;
 }
-
-.btn,
-.btn:link,
-.btn:visited{
+ 
+.carousel {
+    position: relative;
+    width: clamp(12rem, 24vw, 19rem);
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 1.25rem;
+    box-shadow: .7rem .7rem 0 var(--pink);
+}
+ 
+.slide {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    transition: opacity .8s ease;
+}
+ 
+.slide.is-active { opacity: 1; }
+ 
+.carousel-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+ 
+.carousel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+ 
+/* Sections: text on the left, work on the right, a hairline between sections */
+.project-section {
+    display: grid;
+    grid-template-columns: minmax(0, 17rem) minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    column-gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+    padding-top: clamp(2rem, 4vw, 3rem);
+    border-top: 1px solid var(--rule);
+}
+ 
+.section-title {
+    grid-column: 1;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 .75rem;
+}
+ 
+.section-desc {
+    grid-column: 1;
+    font-size: .95rem;
+    line-height: 1.65;
+    max-width: 60ch;
+    margin: 0;
+}
+ 
+.gallery,
+.button-row {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+ 
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1.25rem;
+}
+ 
+.gallery-image {
+    overflow: hidden;
+    border-radius: 1rem;
+    background: #fff;
+}
+ 
+.gallery-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+ 
+/* Buttons */
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1rem;
+}
+ 
+.btn {
     display: inline-block;
-    margin-top: 1.5rem;
-    padding: .75rem 1.5rem;
-    background: #e2788c;
-    color: black;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding: .8rem 1.6rem;
+    background: var(--pink);
+    color: #000;
     font-size: clamp(.9rem, 1.2vw, 1rem);
-    text-decoration: none;
+    font-weight: 600;
     border-radius: 2rem;
     transition: background .2s ease;
 }
-
-.btn:hover{
-    background: #83adf0;
-    color: black;
+ 
+.btn:hover {
+    background: var(--blue);
+    color: #000;
+    text-decoration: none;
+}
+ 
+.btn--ghost {
+    background: transparent;
+    box-shadow: inset 0 0 0 2px var(--pink);
+}
+ 
+.btn--ghost:hover { box-shadow: inset 0 0 0 2px var(--blue); }
+ 
+@media (max-width: 52rem) {
+    .project-banner { grid-template-columns: 1fr; }
+    .carousel { margin: 0 .7rem .7rem 0; }
+ 
+    .project-section { grid-template-columns: 1fr; grid-template-rows: none; }
+    .gallery,
+    .button-row { grid-column: 1; grid-row: auto; margin-top: 1.5rem; }
 }
 
-#scroll{
-    color:#e2788c;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(1.25rem, 1.75vw, 1.75rem);
-    margin: auto;
-    margin-top: 2rem;
-    align-items: center;
-    opacity: 75%;
+.project-banner { grid-template-columns: 1fr; }
+ 
+.project-intro .btn { margin-top: 1.5rem; }
+ 
+.scroll-hint {
+    align-self: center;
+    margin: 0;
+    color: var(--pink-text);
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    font-weight: 600;
 }
-.annotated-stage{
+ 
+.annotated {
+    background: #fff;
+    border-radius: 1.75rem;
+    overflow: hidden;
+}
+ 
+.annotated-stage {
     position: relative;
     width: 100%;
     margin: 0;
     aspect-ratio: 1186 / 1270;
 }
  
-.annotated-img{
+.annotated-img {
     position: absolute;
     left: 17.12%;
     top: 9.2%;
@@ -134,8 +263,8 @@ a:hover{
     height: auto;
     display: block;
 }
-
-.annotated-lines{
+ 
+.annotated-lines {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -143,45 +272,41 @@ a:hover{
     pointer-events: none;
 }
  
-.annotated-lines line{
-    stroke: #e2788c;
+.annotated-lines line {
+    stroke: var(--pink);
     stroke-width: 3px;
     stroke-linecap: round;
 }
-
-.note{
+ 
+.note {
     position: absolute;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(.75rem, 1vw, 1rem);
     font-size: clamp(.75rem, 1.25vw, 1rem);
-    font-weight: 300;
     line-height: 1.4;
     margin: 0;
 }
  
-.note--left{
-    left: 0;
+.note--left {
+    left: 2%;
     top: 29%;
-    width: 24%;
+    width: 22%;
 }
  
-.note--left p{
+.note--left p {
     margin: 0;
     max-width: 30ch;
 }
  
-.note--left p + p{
-    margin-top: 1em;
-}
+.note--left p + p { margin-top: 1em; }
  
-.note--right{
-    left: 88.2%;
+.note--right {
+    left: 87.2%;
     width: 11.8%;
     transform: translateY(-50%);
     max-width: 30ch;
 }
  
-.note--1{ top: 27.2%; }
-.note--2{ top: 39.5%; }
-.note--3{ top: 56.9%; }
-.note--4{ top: 72.7%; }
+.note--1 { top: 27.2%; }
+.note--2 { top: 39.5%; }
+.note--3 { top: 56.9%; }
+.note--4 { top: 72.7%; }
+ 
