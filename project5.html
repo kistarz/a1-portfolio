@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Vanessa Pham">
+  <meta name="description" content="An application for exploring Martian terrain and planning missions.">
+  <title>Martian Map</title>
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="project1.css">
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" class="nav-name">Vanessa Pham</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+ 
+  <main class="project">
+    <section class="project-banner" aria-labelledby="project-title">
+      <div class="project-intro">
+        <h1 id="project-title" class="project-title">Martian Map</h1>
+        <p>This project was a collaborative journey that began with researching and collecting NASA datasets, followed by defining project requirements, designing the user experience in Figma, and bringing everything to life through code. Working alongside a team made the experience especially rewarding, as we combined our ideas and skills to transform a complex challenge into a functional application while gaining valuable experience in collaboration, problem-solving, and development.</p>
+      </div>
+    </section>
+ 
+    <section class="project-section" aria-labelledby="section-1-title">
+      <h2 id="section-1-title" class="section-title">Requirements Specification</h2>
+      <p class="section-desc">Before beginning development, we analyzed the challenge requirements and identified the key features needed to support a successful Mars exploration mission. This included researching NASA datasets, determining what information would be most valuable to astronauts, and outlining essential features such as surface mapping, environmental conditions, route planning, and hazard detection.</p>
+ 
+      <div class="gallery">
+        <div class="gallery-image"><img src="reqspecs.png" alt="Requirements Specification"></div>
+        <div class="gallery-image"><img src="User Flows (1).png" alt="User Flow"></div>
+      </div>
+    </section>
+ 
+    <section class="project-section" aria-labelledby="section-2-title">
+      <h2 id="section-2-title" class="section-title">Designing in Figma</h2>
+      <p class="section-desc">With the core requirements established, I translated the concept into a cohesive user interface using Figma. I designed the different screens, mapped out user interactions, and organized complex scientific data into an accessible layout. The goal was to create an intuitive experience that would allow astronauts to quickly understand their surroundings and make informed decisions.</p>
+ 
+      <div class="gallery">
+        <div class="gallery-image"><img src="marsscreen1.png" alt="Design iterations"></div>
+      </div>
+    </section>
+ 
+    <section class="project-section" aria-labelledby="section-3-title">
+      <h2 id="section-3-title" class="section-title">Development & Implementation</h2>
+      <p class="section-desc">Once the designs were finalized, we brought the concept to life by translating the Figma prototypes into a functional program. We implemented the interface, integrated the necessary features and data, and developed the interactions that allow users to explore Martian terrain, monitor environmental conditions, and plan routes. This stage transformed the initial concept into a working application.</p>
+ 
+      <div class="button-row">
+        <a href="https://github.com/Plehndm/NASA-Space-Apps-Phobos/tree/main" class="btn">Github Repository (Will make public after hackathon completion)</a>
+      </div>
+    </section>
+  </main>
+ 
+  <script src="project.js"></script>
+  <script src="reveal.js"></script>
+</body>
+</html>
